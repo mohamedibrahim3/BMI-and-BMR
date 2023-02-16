@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#FFFFFF"
-
     android:backgroundTint="#FFFFFF"
     android:backgroundTintMode="screen"
     android:fontFamily="@font/cairo_semibold"
