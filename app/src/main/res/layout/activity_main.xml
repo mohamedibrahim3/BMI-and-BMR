@@ -224,26 +224,31 @@
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/Gender"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/GenderInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
         android:layout_width="371dp"
         android:layout_height="57dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layoutDirection="rtl"
         app:boxCornerRadiusBottomEnd="10sp"
         app:boxCornerRadiusBottomStart="10sp"
         app:boxCornerRadiusTopEnd="10sp"
         app:boxCornerRadiusTopStart="10sp"
-        app:boxStrokeColor="#868484"
-        app:layout_constraintEnd_toEndOf="@+id/textView10"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
-        tools:ignore="InvalidId">
+        tools:ignore="InvalidId"
+        app:boxStrokeColor="#868484"
+        app:boxBackgroundColor="@color/white">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/gender"
+        <AutoCompleteTextView
+            android:id="@+id/genderAutoComplete"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="ذكر"
-            android:textColorHint="#5A5959" />
+            android:layout_height="match_parent"
+            android:text="ذكر"
+            android:textColor="#868484"
+            android:inputType="none"
+             />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
