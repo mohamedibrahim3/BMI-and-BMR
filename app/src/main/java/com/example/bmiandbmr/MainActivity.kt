@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputType
 import android.view.Gravity
+import android.view.View
 import android.widget.ArrayAdapter
 import androidx.core.content.ContentProviderCompat.requireContext
 import com.example.bmiandbmr.databinding.ActivityMainBinding
@@ -13,6 +14,7 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
 
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
     private var binding: ActivityMainBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,19 +67,31 @@ class MainActivity : AppCompatActivity() {
     }
     private fun bindingIsEmpty(){
         if(binding?.ageEditText?.text?.isEmpty() == true) {
+            binding?.Star1?.visibility = View.VISIBLE
             binding?.Star1?.setTextColor(Color.parseColor("#EB1D36"))
         }
-        else if (binding?.ageEditText?.text?.isEmpty() != true)
-            binding?.Star1?.setTextColor(Color.parseColor("#868484"))
+        else if (binding?.ageEditText?.text?.isEmpty() != true){
+            binding?.Star1?.visibility = View.INVISIBLE
+            binding?.AgeInputLayout?.boxStrokeColor = resources.getColor(R.color.light_blue1)
+        }
         if(binding?.heightEditText?.text?.isEmpty() == true) {
+            binding?.Star2?.visibility = View.VISIBLE
             binding?.Star2?.setTextColor(Color.parseColor("#EB1D36"))
         }
-        else if (binding?.heightEditText?.text?.isEmpty() != true)
-            binding?.Star2?.setTextColor(Color.parseColor("#868484"))
+        else if (binding?.heightEditText?.text?.isEmpty() != true){
+            binding?.Star2?.visibility = View.INVISIBLE
+            binding?.HeightInputLayout?.boxStrokeColor = resources.getColor(R.color.light_blue1)
+
+        }
         if(binding?.weightEditText?.text?.isEmpty() == true) {
+            binding?.Star3?.visibility = View.VISIBLE
             binding?.Star3?.setTextColor(Color.parseColor("#EB1D36"))
         }
-        else if (binding?.weightEditText?.text?.isEmpty() != true)
-            binding?.Star3?.setTextColor(Color.parseColor("#868484"))
+        else if (binding?.weightEditText?.text?.isEmpty() != true){
+            binding?.Star3?.visibility = View.INVISIBLE
+            binding?.WeightInputLayout?.boxStrokeColor = resources.getColor(R.color.light_blue1)
+
+        }
+
     }
 }
