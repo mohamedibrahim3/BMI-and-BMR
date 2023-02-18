@@ -14,6 +14,11 @@ class Verify_data_MainActivity : AppCompatActivity() {
         binding.btnEdit.setOnClickListener {
             finish()
         }
+        binding.btnCal.setOnClickListener {
+            Intent(this,ResultBmrBmi::class.java).also {
+                startActivity(it)
+            }
+        }
         setContentView(binding.root)
     }
 }

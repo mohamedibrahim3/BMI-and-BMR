@@ -12,6 +12,9 @@
         android:theme="@style/Theme.BMIAndBMR"
         tools:targetApi="31">
         <activity
+            android:name=".ResultBmrBmi"
+            android:exported="false" />
+        <activity
             android:name=".Verify_data_MainActivity"
             android:exported="false" />
         <activity
