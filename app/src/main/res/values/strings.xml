@@ -3,6 +3,7 @@
     <string name="CM">سم</string>
     <string name="YourAge">كم عمرك ؟</string>
     <string name="KM">كجم</string>
+    <string name="editTxt">تعديل</string>
     <string-array name="Gender">
         <item>ذكر</item>
         <item>أنثى</item>

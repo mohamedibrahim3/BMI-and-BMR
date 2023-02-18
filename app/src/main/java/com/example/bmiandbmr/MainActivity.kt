@@ -1,6 +1,7 @@
 package com.example.bmiandbmr
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,6 +17,9 @@ import com.google.android.material.textfield.TextInputLayout
 
 @Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
+    var flagAge = false
+    var flagHeight = false
+    var flagWeight = false
     private var binding: ActivityMainBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +32,10 @@ class MainActivity : AppCompatActivity() {
 
         binding?.NextBtntInBMI?.setOnClickListener {
             bindingIsEmpty()
+            if(flagAge and flagHeight and flagWeight)
+                Intent(this,Verify_data_MainActivity::class.java).also {
+                    startActivity(it)
+                }
         }
         setContentView(binding?.root)
     }
@@ -69,29 +77,34 @@ class MainActivity : AppCompatActivity() {
         if(binding?.ageEditText?.text?.isEmpty() == true) {
             binding?.Star1?.visibility = View.VISIBLE
             binding?.Star1?.setTextColor(Color.parseColor("#EB1D36"))
+            flagAge = false
         }
         else if (binding?.ageEditText?.text?.isEmpty() != true){
             binding?.Star1?.visibility = View.INVISIBLE
             binding?.AgeInputLayout?.boxStrokeColor = resources.getColor(R.color.light_blue1)
+            flagAge = true
         }
         if(binding?.heightEditText?.text?.isEmpty() == true) {
             binding?.Star2?.visibility = View.VISIBLE
             binding?.Star2?.setTextColor(Color.parseColor("#EB1D36"))
+            flagHeight = false
         }
         else if (binding?.heightEditText?.text?.isEmpty() != true){
             binding?.Star2?.visibility = View.INVISIBLE
             binding?.HeightInputLayout?.boxStrokeColor = resources.getColor(R.color.light_blue1)
+            flagHeight = true
 
         }
         if(binding?.weightEditText?.text?.isEmpty() == true) {
             binding?.Star3?.visibility = View.VISIBLE
             binding?.Star3?.setTextColor(Color.parseColor("#EB1D36"))
+            flagWeight = false
         }
         else if (binding?.weightEditText?.text?.isEmpty() != true){
             binding?.Star3?.visibility = View.INVISIBLE
             binding?.WeightInputLayout?.boxStrokeColor = resources.getColor(R.color.light_blue1)
-
+            flagWeight = true
         }
-
+        binding?.GenderInputLayout?.boxStrokeColor = resources.getColor(R.color.light_blue1)
     }
 }
