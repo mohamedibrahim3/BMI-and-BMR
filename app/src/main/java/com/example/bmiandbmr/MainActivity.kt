@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         binding?.NextBtntInBMI?.setOnClickListener {
             bindingIsEmpty()
-            if(flagAge and flagHeight and flagWeight)
+            //if(flagAge and flagHeight and flagWeight)
                 Intent(this,Verify_data_MainActivity::class.java).also {
                     startActivity(it)
                 }
