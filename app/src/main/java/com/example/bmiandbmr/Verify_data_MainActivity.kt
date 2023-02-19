@@ -7,8 +7,8 @@ import android.os.Bundle
 import com.example.bmiandbmr.databinding.ActivityVerifyDataMainBinding
 
 class Verify_data_MainActivity : AppCompatActivity() {
-    var curProgressKm = 110
-    var curProgressCm = 160
+    var curProgressKm = 90
+    var curProgressCm = 186
     private lateinit var binding: ActivityVerifyDataMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
