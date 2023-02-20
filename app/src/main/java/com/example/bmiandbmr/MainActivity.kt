@@ -1,6 +1,6 @@
 package com.example.bmiandbmr
 
-import android.content.Context
+
 import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -9,10 +9,8 @@ import android.text.InputType
 import android.view.Gravity
 import android.view.View
 import android.widget.ArrayAdapter
-import androidx.core.content.ContentProviderCompat.requireContext
 import com.example.bmiandbmr.databinding.ActivityMainBinding
 import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
 
 
 @Suppress("DEPRECATION")
@@ -32,8 +30,16 @@ class MainActivity : AppCompatActivity() {
 
         binding?.NextBtntInBMI?.setOnClickListener {
             bindingIsEmpty()
-            //if(flagAge and flagHeight and flagWeight)
+            val age = binding?.ageEditText?.text.toString()
+            val height = binding?.heightEditText?.text.toString()
+            val weight = binding?.weightEditText?.text.toString()
+            val gender1 = binding?.genderAutoComplete?.text.toString()
+            if(flagAge and flagHeight and flagWeight)
                 Intent(this,Verify_data_MainActivity::class.java).also {
+                    it.putExtra("EXTRA_AGE",age)
+                    it.putExtra("EXTRA_HEIGHT",height)
+                    it.putExtra("EXTRA_WEIGHT",weight)
+                    it.putExtra("EXTRA_GENDER",gender1)
                     startActivity(it)
                 }
         }
@@ -106,5 +112,8 @@ class MainActivity : AppCompatActivity() {
             flagWeight = true
         }
         binding?.GenderInputLayout?.boxStrokeColor = resources.getColor(R.color.light_blue1)
+    }
+    private fun intentExtra(){
+
     }
 }
