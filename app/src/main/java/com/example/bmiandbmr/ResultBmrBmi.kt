@@ -15,8 +15,21 @@ class ResultBmrBmi : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityResultBmrBmiBinding.inflate(layoutInflater)
 
-        adapter = FragmentPageAdapter(supportFragmentManager,lifecycle)
+        val bmi = intent.getStringExtra("EXTRA_BMI")
+        val bmr = intent.getStringExtra("EXTRA_BMR")
+        val gender = intent.getStringExtra("EXTRA_GENDER")
+        val bmrDouble: Double = bmr!!.toDouble()
+        val bmiDouble: Double = bmi!!.toDouble()
+        adapter = FragmentPageAdapter(supportFragmentManager,lifecycle,bmiDouble,bmrDouble,gender)
+        // Create new instances of the two fragments and pass the data to them
+        val bmiFragment = BmiFragment.newInstance(bmiDouble,gender!!)
+        val bmrFragment = BmrFragment.newInstance(bmrDouble,gender!!)
 
+        // Replace the fragment containers with the new fragments
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.viewPagerId,bmiFragment)
+            .replace(R.id.viewPagerId, bmrFragment)
+            .commit()
         binding.tabLayoutId.addTab(binding.tabLayoutId.newTab().setText("\t\t\t\t معدل كتله الجسم \t\t\t\t"))
         binding.tabLayoutId.addTab(binding.tabLayoutId.newTab().setText("\t\t\t\t\t معدل الحرق \t\t\t\t\t"))
         binding.viewPagerId.adapter = adapter
