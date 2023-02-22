@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/constraint"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -39,7 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="210dp"
-        android:src="@drawable/termometer_res"
+        android:src="@drawable/termometer_res__3_"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -49,7 +50,7 @@
         android:id="@+id/txtResIdBmi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="85dp"
+        android:layout_marginBottom="95dp"
         android:fontFamily="@font/cairo_semibold"
         android:text="TextView"
         android:textColor="#388E3C"
@@ -58,4 +59,61 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/lineBId"
+        android:layout_width="5dp"
+        android:layout_height="61dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="188dp"
+        android:src="@drawable/line"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.211"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/lineGId"
+        android:layout_width="5dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="82dp"
+        android:src="@drawable/line2"
+        android:translationX="4dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/lineBId"
+        app:layout_constraintStart_toEndOf="@+id/lineBId"
+        app:layout_constraintTop_toTopOf="@+id/lineBId"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/lineOId"
+        android:layout_width="5dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="24dp"
+        android:src="@drawable/line3"
+        android:translationX="4dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/lineGId"
+        app:layout_constraintTop_toTopOf="@+id/lineGId" />
+
+    <ImageView
+        android:id="@+id/lineRId"
+        android:layout_width="5dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="19dp"
+        android:src="@drawable/line4"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/lineOId"
+        app:layout_constraintTop_toTopOf="@+id/lineOId" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="153dp"
+        android:layout_height="112dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="70dp"
+        android:src="@drawable/listres"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
