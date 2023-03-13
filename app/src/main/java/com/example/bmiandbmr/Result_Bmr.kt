@@ -28,35 +28,35 @@ class Result_Bmr : AppCompatActivity() {
             binding.txtResIdBmr.text = "للثبات علي نفس الوزن يتم استهلاك Calories/Day $bmr"
             binding.txtResIdBmr.setTextColor(Color.parseColor("#1976D2"))
             binding.idLineBlue.visibility = View.VISIBLE
-            binding.idLineBlue.translationX = (5).toFloat()
+            binding.idLineBlue.translationX = (bmr!! * (50/1000)).toFloat()
 
         }
         else if (bmr!! >= 1500 && bmr!! < 2000){
             binding.txtResIdBmr.text = "للثبات علي نفس الوزن يتم استهلاك Calories/Day $bmr"
             binding.txtResIdBmr.setTextColor(Color.parseColor("#388E3C"))
             binding.idLineGreen.visibility = View.VISIBLE
-            binding.idLineGreen.translationX = (5).toFloat()
+            binding.idLineGreen.translationX = (bmr!! * (50/1500)).toFloat()
         }
         else if (bmr!! >= 2000 && bmr!! < 2500){
             binding.txtResIdBmr.text = "للثبات علي نفس الوزن يتم استهلاك Calories/Day $bmr"
             binding.txtResIdBmr.setTextColor(Color.parseColor("#FF8000"))
             binding.idLineOrange.visibility = View.VISIBLE
-            binding.idLineOrange.translationX = ("30dp").toFloat()
+            binding.idLineOrange.translationX = (bmr!! * (50/2000)).toFloat()
         }
         else if (bmr!! >= 2500 && bmr!! < 3000) {
             binding.txtResIdBmr.text = "للثبات علي نفس الوزن يتم استهلاك Calories/Day $bmr"
             binding.txtResIdBmr.setTextColor(Color.parseColor("#FF5252"))
             binding.idLineRed.visibility = View.VISIBLE
-            binding.idLineRed.translationX = (bmr!! * 0.005).toFloat()
+            binding.idLineRed.translationX = (bmr!! * (50/2500)).toFloat()
         }
         else {
             binding.txtResIdBmr.text = "للثبات علي نفس الوزن يتم استهلاك Calories/Day $bmr"
             binding.txtResIdBmr.setTextColor(Color.parseColor("#5D3891"))
             binding.IdLinePurple.visibility = View.VISIBLE
             if(bmr!!>=3500)
-                binding.IdLinePurple.translationX = (bmr!! * 0.005).toFloat()
+                binding.IdLinePurple.translationX = (bmr!! * (50/3500)).toFloat()
             else
-                binding.IdLinePurple.translationX = (bmr!! * 0.005).toFloat()
+                binding.IdLinePurple.translationX = (bmr!! * (50/3000)).toFloat()
         }
         setContentView(binding.root)
         }
