@@ -128,13 +128,13 @@
       android:fillColor="#F69784"/>
   <path
       android:pathData="M161.73,269.32L168.79,241.09L169.71,229.95H110.57L111.49,241.09L118.55,269.32L108.55,326.3H171.72L161.73,269.32Z"
-      android:fillColor="#E53671"/>
+      android:fillColor="#0583F2"/>
   <path
       android:pathData="M119.47,232.73H112.85V209.99L119.47,208.65V232.73Z"
-      android:fillColor="#E53671"/>
+      android:fillColor="#0583F2"/>
   <path
       android:pathData="M167.94,232.73H161.32V208.65L167.94,209.99V232.73Z"
-      android:fillColor="#E53671"/>
+      android:fillColor="#0583F2"/>
   <path
       android:pathData="M61.2,83.96L54.01,81.92L50.4,94.38L57.59,96.42L61.2,83.96Z"
       android:strokeAlpha="0.5"

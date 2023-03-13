@@ -38,7 +38,7 @@ class BmiFragment : Fragment() {
             gender = it.getString(ARG_GENDER)
         }
     }
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "SuspiciousIndentation")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

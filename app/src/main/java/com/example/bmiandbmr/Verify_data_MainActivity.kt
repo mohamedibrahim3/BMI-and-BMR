@@ -19,14 +19,13 @@ class Verify_data_MainActivity : AppCompatActivity() {
         val gender = intent.getStringExtra("EXTRA_GENDER")
         val cm = "$height cm"
         val kg = "$weight kg"
+        val y = "$age age"
         val age1 = age?.toFloat()
         val height1 = height?.toFloat()
         val weight1 = weight?.toFloat()
         binding.txtCmId.text = cm
         binding.txtKgId.text = kg
-        if (age1 != null) {
-            binding.SliderID.value = age1.toFloat()
-        }
+        binding.txtAgeId?.text = y
         if(gender == "أنثى") {
             binding.imgManId.visibility = View.INVISIBLE
             binding.imgWomanId.visibility = View.VISIBLE
