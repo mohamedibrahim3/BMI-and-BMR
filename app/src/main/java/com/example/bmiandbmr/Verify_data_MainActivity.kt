@@ -4,7 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import com.example.bmiandbmr.databinding.ActivityVerifyDataMainBinding
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class Verify_data_MainActivity : AppCompatActivity() {
     var curProgressKm = 40
@@ -39,12 +41,27 @@ class Verify_data_MainActivity : AppCompatActivity() {
             val bmi = calcBMI(height1,weight1)
             val bmrS: String = bmr.toString()
             val bmiS: String = bmi.toString()
-            Intent(this,ResultBmrBmi::class.java).also {
-                it.putExtra("EXTRA_BMR",bmrS)
-                it.putExtra("EXTRA_BMI",bmiS)
-                it.putExtra("EXTRA_GENDER",gender)
-                startActivity(it)
+            val view: View = layoutInflater.inflate(R.layout.bottom_sheet_to_calculate_bmi_bmr, null)
+            val dialog = BottomSheetDialog(this)
+            val BtnIdBmi = view.findViewById<Button>(R.id.btnIdCalcBmi)
+            val BtnIdBmr = view.findViewById<Button>(R.id.btnIdCalcBmr)
+            BtnIdBmi.setOnClickListener {
+                Intent(this,ResultBmi::class.java).also {
+                    it.putExtra("EXTRA_BMI",bmiS)
+                    it.putExtra("EXTRA_GENDER",gender)
+                    startActivity(it)
+                }
             }
+            BtnIdBmr.setOnClickListener {
+                Intent(this,Result_Bmr::class.java).also {
+                    it.putExtra("EXTRA_BMR",bmrS)
+                    it.putExtra("EXTRA_GENDER",gender)
+                    startActivity(it)
+                }
+            }
+
+            dialog.setContentView(view)
+            dialog.show()
         }
 
         setContentView(binding.root)

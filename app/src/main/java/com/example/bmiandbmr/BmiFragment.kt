@@ -12,7 +12,7 @@ import com.example.bmiandbmr.databinding.FragmentBmi2Binding
 import kotlin.math.roundToInt
 
 
-class BmiFragment : Fragment() {
+class BmiFragment : Fragment(R.layout.fragment_bmi2) {
     private var _binding: FragmentBmi2Binding? = null
     private val binding get() = _binding!!
     private var bmi: Double? = null
